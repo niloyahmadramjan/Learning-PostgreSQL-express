@@ -1,3 +1,5 @@
+// src/config/index.ts
+
 import dotenv from "dotenv";
 import path from "path";
 
@@ -6,8 +8,8 @@ dotenv.config({
 });
 
 const config = {
-  dburl: process.env.DBURL ,
-  port: process.env.PORT,
+  port: process.env.PORT || 3000,
+  connection_string: process.env.DBURL as string,
 };
 
 export default config;
