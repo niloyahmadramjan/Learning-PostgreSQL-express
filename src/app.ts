@@ -6,12 +6,16 @@ import express, {
 import { userRoute } from "./modules/users/user.routes";
 import { userProfile } from "./modules/profile/profile.route";
 import { authRouter } from "./modules/auth/auth.route";
+import { logstracker } from "./middleware/log.middleware";
+import auth from "./middleware/auth";
 
 const app: Application = express();
 
 app.use(express.json());
 app.use(express.text());
 app.use(express.urlencoded({ extended: true }));
+
+app.use(logstracker)
 
 app.get("/", (req: Request, res: Response) => {
   res.status(200).json({

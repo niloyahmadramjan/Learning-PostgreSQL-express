@@ -6,10 +6,11 @@ import {
   getSingleUser,
   updateUser,
 } from "./user.controller";
+import auth from "../../middleware/auth";
 const router = Router();
 
 router.post("/", createUser);
-router.get("/", getAllUser);
+router.get("/", auth(), getAllUser);
 router.get("/:id", getSingleUser);
 router.put("/:id", updateUser);
 
