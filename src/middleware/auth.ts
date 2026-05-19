@@ -31,13 +31,13 @@ const auth = () => {
           message: "user cloud't find!",
         });
       }
-      console.log(user.is_active);
       if (!user.is_active) {
         res.status(400).json({
           status: false,
           message: "Unauthorize user!",
         });
       }
+      req.user = decoded;
     } catch (error: any) {
       res.status(500).json({
         status: false,
