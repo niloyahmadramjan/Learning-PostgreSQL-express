@@ -3,18 +3,18 @@ import { pool } from "../../db";
 import type { IUser } from "./user.interface";
 
 const createUser = async (payload: IUser) => {
-  const { name, email, password, age } = payload;
+  const { name, email, password, age, role } = payload;
 
   const hashPass = await bcrypt.hash(password, 10);
 
   const result = await pool.query(
     `
-    INSERT INTO users( name, email, password, age) VALUES($1,$2,$3,$4) RETURNING *
+    INSERT INTO users( name, email, password, age,role) VALUES($1,$2,$3,$4,  COALESCE($5, 'user')) RETURNING *
   `,
-    [name, email, hashPass, age],
+    [name, email, hashPass, age, role],
   );
   delete result.rows[0].password;
-  
+
   return result;
 };
 
@@ -22,7 +22,7 @@ const getAlluserData = async () => {
   const user = await pool.query(`
       SELECT * FROM Users
       `);
-      const usersWithoutPassword = user.rows.map((user)=> delete user.password)
+  const usersWithoutPassword = user.rows.map((user) => delete user.password);
   return user;
 };
 
@@ -33,7 +33,7 @@ const getSingleUserData = async (id: string) => {
      `,
     [id],
   );
-  delete result.rows[0].password
+  delete result.rows[0].password;
   return result;
 };
 
@@ -52,7 +52,7 @@ const updateSingleUserData = async (payload: IUser, id: string) => {
      `,
     [name, age, email, password, is_active, id],
   );
-  delete result.rows[0].password
+  delete result.rows[0].password;
   return result;
 };
 

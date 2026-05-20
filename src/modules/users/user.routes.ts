@@ -7,10 +7,11 @@ import {
   updateUser,
 } from "./user.controller";
 import auth from "../../middleware/auth";
+import { USER_ROLE } from "../../types/role";
 const router = Router();
 
 router.post("/", createUser);
-router.get("/", auth(), getAllUser);
+router.get("/", auth(USER_ROLE.admin, USER_ROLE.agent), getAllUser);
 router.get("/:id", getSingleUser);
 router.put("/:id", updateUser);
 

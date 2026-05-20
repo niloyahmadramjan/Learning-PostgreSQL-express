@@ -44,3 +44,47 @@ Method --> GET -- Time--> 1779160966473 -- URL --> /api/users
 Method --> GET -- Time--> 1779160999810 -- URL --> /api/users
 
 Method --> GET -- Time--> 1779161009335 -- URL --> /api/users
+
+Method --> POST -- Time--> 1779261086776 -- URL --> /api/login
+
+Method --> POST -- Time--> 1779261097195 -- URL --> /api/login
+
+Method --> POST -- Time--> 1779261133076 -- URL --> /api/users
+
+Method --> POST -- Time--> 1779261313053 -- URL --> /api/users
+
+Method --> POST -- Time--> 1779261338831 -- URL --> /api/users
+
+Method --> POST -- Time--> 1779261424310 -- URL --> /api/users
+
+Method --> POST -- Time--> 1779261495979 -- URL --> /api/users
+
+Method --> POST -- Time--> 1779261565297 -- URL --> /api/users
+
+Method --> POST -- Time--> 1779261616151 -- URL --> /api/users
+
+Method --> POST -- Time--> 1779261652254 -- URL --> /api/users
+
+Method --> POST -- Time--> 1779261908439 -- URL --> /api/login
+
+Method --> GET -- Time--> 1779261963758 -- URL --> /api/users
+
+Method --> GET -- Time--> 1779261972297 -- URL --> /api/users
+
+Method --> GET -- Time--> 1779262009908 -- URL --> /api/users
+
+Method --> GET -- Time--> 1779262365200 -- URL --> /api/users
+
+Method --> GET -- Time--> 1779262432750 -- URL --> /api/users
+
+Method --> POST -- Time--> 1779262452974 -- URL --> /api/login
+
+Method --> GET -- Time--> 1779262470646 -- URL --> /api/users
+
+Method --> GET -- Time--> 1779262517258 -- URL --> /api/users
+
+Method --> GET -- Time--> 1779262968586 -- URL --> /
+
+Method --> GET -- Time--> 1779262968964 -- URL --> /favicon.ico
+
+Method --> GET -- Time--> 1779262976573 -- URL --> /api/users

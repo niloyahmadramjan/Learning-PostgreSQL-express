@@ -7,7 +7,6 @@ import { userRoute } from "./modules/users/user.routes";
 import { userProfile } from "./modules/profile/profile.route";
 import { authRouter } from "./modules/auth/auth.route";
 import { logstracker } from "./middleware/log.middleware";
-import auth from "./middleware/auth";
 
 const app: Application = express();
 
