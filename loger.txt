@@ -90,3 +90,37 @@ Method --> GET -- Time--> 1779262968964 -- URL --> /favicon.ico
 Method --> GET -- Time--> 1779262976573 -- URL --> /api/users
 
 Method --> POST -- Time--> 1779296179421 -- URL --> /api/login
+
+Method --> GET -- Time--> 1779296532523 -- URL --> /api/users
+
+Method --> POST -- Time--> 1779296551059 -- URL --> /api/login
+
+Method --> POST -- Time--> 1779296572960 -- URL --> /api/refresh-token
+
+Method --> POST -- Time--> 1779296636387 -- URL --> /api/auth/refresh-token
+
+Method --> POST -- Time--> 1779296725274 -- URL --> /api/auth/refresh-token
+
+Method --> POST -- Time--> 1779297798112 -- URL --> /api/auth/login
+
+Method --> POST -- Time--> 1779297815493 -- URL --> /api/auth/refresh-token
+
+Method --> POST -- Time--> 1779297943032 -- URL --> /api/auth/refresh-token
+
+Method --> POST -- Time--> 1779297979707 -- URL --> /api/auth/refresh-token
+
+Method --> POST -- Time--> 1779298042736 -- URL --> /api/auth/refresh-token
+
+Method --> POST -- Time--> 1779298087073 -- URL --> /api/auth/refresh-token
+
+Method --> POST -- Time--> 1779298659357 -- URL --> /api/auth/refresh-tokenbn
+
+Method --> POST -- Time--> 1779298666206 -- URL --> /api/auth/refresh-tokenbn
+
+Method --> POST -- Time--> 1779298746451 -- URL --> /api/auth/refresh-tokenbn
+
+Method --> POST -- Time--> 1779298796902 -- URL --> /api/auth/refresh-tokenbn
+
+Method --> POST -- Time--> 1779298852863 -- URL --> /api/auth/refresh-token
+
+Method --> POST -- Time--> 1779298864292 -- URL --> /api/auth/refresh-token

@@ -1,6 +1,6 @@
 import bcrypt from "bcryptjs";
 import { pool } from "../../db";
-import jwt from "jsonwebtoken";
+import jwt, { type JwtPayload } from "jsonwebtoken";
 import config from "../../config";
 
 const loginsevice = async (payload: { email: string; password: string }) => {
@@ -30,12 +30,48 @@ const loginsevice = async (payload: { email: string; password: string }) => {
   const accessToken = jwt.sign(jwtpayload, config.jwtsecret as string, {
     expiresIn: "5d",
   });
-   const refreshToken = jwt.sign(jwtpayload, config.refreshasecrect as string, {
+  const refreshToken = jwt.sign(jwtpayload, config.refreshasecrect as string, {
     expiresIn: "5d",
   });
 
-
-  return { accessToken,refreshToken };
+  return { accessToken, refreshToken };
 };
 
-export const authservice = { loginsevice };
+const generateAccessToken = async (token: string) => {
+  if (!token) {
+    throw new Error("Unathorized access!");
+  }
+
+  const decoded = jwt.verify(
+    token as string,
+    config.refreshasecrect as string,
+  ) as JwtPayload;
+  const userData = await pool.query(
+    `
+    SELECT * FROM users WHERE email = $1
+    `,
+    [decoded.email],
+  );
+  const user = userData.rows[0];
+  if (userData.rows.length === 0) {
+   throw new Error("User not found")
+    }
+  
+  if (!user.is_active) {
+    throw new Error(" User not active ")
+  }
+
+  const jwtpayload = {
+    id: user.id,
+    name: user.name,
+    email: user.email,
+    role: user.role,
+    is_active: user.is_active,
+  };
+  const accessToken = jwt.sign(jwtpayload, config.jwtsecret as string, {
+    expiresIn: "5d",
+  });
+  return {accessToken};
+};
+
+export const authservice = { loginsevice, generateAccessToken };
