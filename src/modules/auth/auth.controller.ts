@@ -1,5 +1,6 @@
 import type { Request, Response } from "express";
 import { authservice } from "./auth.services";
+import sentResponse from "../../utils/sendResponse";
 
 const userlogin = async (req: Request, res: Response) => {
   try {
@@ -30,8 +31,8 @@ const refreshtoken = async (req: Request, res: Response) => {
   try {
     const refreshtoken = req.cookies.refresh_token;
     const result = await authservice.generateAccessToken(refreshtoken);
-
-    res.status(200).json({
+    sentResponse(res, {
+      statusCode: 200,
       status: true,
       message: "Access token generated",
       data: result,
