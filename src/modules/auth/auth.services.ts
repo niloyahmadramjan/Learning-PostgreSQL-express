@@ -30,8 +30,12 @@ const loginsevice = async (payload: { email: string; password: string }) => {
   const accessToken = jwt.sign(jwtpayload, config.jwtsecret as string, {
     expiresIn: "5d",
   });
+   const refreshToken = jwt.sign(jwtpayload, config.refreshasecrect as string, {
+    expiresIn: "5d",
+  });
 
-  return { accessToken };
+
+  return { accessToken,refreshToken };
 };
 
 export const authservice = { loginsevice };

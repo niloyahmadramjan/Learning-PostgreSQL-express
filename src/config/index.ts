@@ -11,6 +11,7 @@ const config = {
   port: process.env.PORT || 3000,
   connection_string: process.env.DBURL as string,
   jwtsecret: process.env.JWT_SECRET,
+  refreshasecrect: process.env.REFRESHSECRECT
 };
 
 export default config;
